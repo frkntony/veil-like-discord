@@ -6,7 +6,6 @@ import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhoIsOnline from './WhoIsOnline'
 import UserTotalCounter from './UserTotalCounter'
-import scrollToComponent from 'react-scroll-to-component'
 
 export default class ChatScreen extends Component {
 

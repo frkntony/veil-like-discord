@@ -30,8 +30,7 @@ class SendMessageForm extends Component {
       <form onSubmit={this.onSubmit}>
         <div className="input-field small col s7 l10 m10">
           <i className="material-icons prefix">account_circle</i>
-          <input id="name" type="text" ref="usrMsg" className="validate" onChange={this.onChange} />
-          <label htmlFor="name">New message</label>
+          <input id="name" type="text" ref="usrMsg" className="validate" placeholder='New message...' onChange={this.onChange} />
         </div>
         <div className="input-field col s5 l2 m2">
           <button className="btn red waves-effect waves-light" type="submit" name="action">SEND

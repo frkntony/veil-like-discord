@@ -6,6 +6,7 @@ import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhoIsOnline from './WhoIsOnline'
 import UserTotalCounter from './UserTotalCounter'
+import scrollToComponent from 'react-scroll-to-component'
 
 export default class ChatScreen extends Component {
 
@@ -42,14 +43,14 @@ export default class ChatScreen extends Component {
             onNewMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message]
-              })
+              }, () => this.messagesEnd.scrollIntoView({ behavior: "smooth" }))
             },
+            
             onUserStartedTyping: user => {
               console.log(user.name + ' started typing')
               this.setState({
                 usersWhoAreTyping: [...this.state.usersWhoAreTyping, user.name]
-              })
-
+              }, () => this.messagesEnd.scrollIntoView({ behavior: "smooth" }))
             },
             onUserStoppedTyping: user => {
               console.log(user.name + ' stopped typing')
@@ -57,7 +58,7 @@ export default class ChatScreen extends Component {
                 usersWhoAreTyping: this.state.usersWhoAreTyping.filter(
                   username => username !== user.name
                 )
-              })
+              }, () => this.messagesEnd.scrollIntoView({ behavior: "smooth" }))
             },
             onUserCameOnline: () => this.forceUpdate(),
             onUserWentOffline: () => this.forceUpdate(),
@@ -148,7 +149,13 @@ export default class ChatScreen extends Component {
                   <div className="card-panel black white-text" style={{ 'height': '65vh' }} >
                     <div className="row" style={msgsScrollBar} >
                       <MessageList currentUser={this.state.currentUser} messages={this.state.messages} />
-                      <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
+                      <TypingIndicator ref={(ref) => this.typing = ref} usersWhoAreTyping={this.state.usersWhoAreTyping} />
+                      <div id='dummyDiv'
+                        style={{ float:"left", clear: "both" }}
+                        ref={(el) => { this.messagesEnd = el; }}
+                      >
+
+                      </div>
                     </div>
                   </div>
 

@@ -55,6 +55,6 @@ app.listen(HTTP_PORT, err => {
   if (err) {
     console.error(err)
   } else {
-    console.log(`vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\nHeroku version on Veil-chat\nVeil-chat server listening on port ${HTTP_PORT}\nvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv`)
+    console.log(`vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\nHeroku version of Veil-chat\nVeil-chat server listening on port ${HTTP_PORT}\nvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv`)
   }
 })

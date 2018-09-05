@@ -1,0 +1,56 @@
+/* app.css */
+
+/* double color material background */
+body {
+    background: linear-gradient(to bottom, #e53935 0%, #e53935 50%, #e53935 50%, black 50%, black 100%);
+}
+
+/* chat app takes the whole page */
+section {
+    height: 100vh;
+}
+
+/* fixed footer at the botton */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* background video on login page */
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 1s opacity;
+}
+
+/* Material scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e53935; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ef5350; 
+}

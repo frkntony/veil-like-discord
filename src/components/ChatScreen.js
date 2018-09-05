@@ -5,6 +5,7 @@ import MessageList from './MessageList'
 import SendMessageForm from './SendMessageForm'
 import TypingIndicator from './TypingIndicator'
 import WhoIsOnline from './WhoIsOnline'
+import UserTotalCounter from './UserTotalCounter'
 
 export default class ChatScreen extends Component {
 
@@ -25,7 +26,7 @@ export default class ChatScreen extends Component {
       instanceLocator: 'v1:us1:e2068def-9683-46dd-bc93-d325e7e677d3',
       userId: this.props.username,
       tokenProvider: new Chatkit.TokenProvider({
-        url: 'http://localhost:3001/authenticate'
+        url: window.location.href + 'authenticate'
       })
     })
 
@@ -92,9 +93,15 @@ export default class ChatScreen extends Component {
   render() {
 
 
-    const scrollBar = {
+    const msgsScrollBar = {
       'height': '55vh',
       'overflowY': 'scroll'
+    };
+
+    const usersScrollBar = {
+      'height': '55vh',
+      'overflowY': 'scroll',
+      'direction': 'rtl'
     };
 
     return (
@@ -103,19 +110,24 @@ export default class ChatScreen extends Component {
 
         <div className="row">
 
-          <div class="col l3 s12">
+          <div className="col l3 s12">
 
             <div className="card-panel black white-text center" style={{ 'height': '90vh' }} >
 
               <i className="material-icons">insert_emoticon</i>
               <h5>Chat Visitors</h5>
-              <h3 className="count">10</h3>
+              <h3 className="count">
+                <UserTotalCounter users={this.state.currentRoom.users} />
+              </h3>
               <div className="progress white">
                 <div className="determinate red" style={{ 'width': '60%' }}></div>
               </div>
 
-              <WhoIsOnline users={this.state.currentRoom.users} />
+              <div style={usersScrollBar}>
+                <WhoIsOnline users={this.state.currentRoom.users} />
 
+              </div>
+              {console.log(window.location.href)}
             </div>
 
           </div>
@@ -134,16 +146,16 @@ export default class ChatScreen extends Component {
 
 
                   <div className="card-panel black white-text" style={{ 'height': '65vh' }} >
-                    <div className="row" style={scrollBar} >
-                      <MessageList messages={this.state.messages} usersWhoAreTyping={this.state.usersWhoAreTyping} />
+                    <div className="row" style={msgsScrollBar} >
+                      <MessageList currentUser={this.state.currentUser} messages={this.state.messages} />
                       <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
                     </div>
                   </div>
 
 
- {/* <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} /> */}
+                  {/* <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} /> */}
 
-<SendMessageForm onSubmit={this.sendMessage} onChange={this.sendTypingEvent} />
+                  <SendMessageForm onSubmit={this.sendMessage} onChange={this.sendTypingEvent} />
                 </div>
 
               </div>

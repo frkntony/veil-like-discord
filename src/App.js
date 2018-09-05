@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   onUsernameSubmitted = (username) => {
-    fetch(`http://localhost:3001/users`, {
+    fetch( window.location.href + 'users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

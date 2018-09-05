@@ -46,7 +46,7 @@ class UserNameForm extends Component {
 
 
                 <ul className="right hide-on-med-and-down">
-                  <li><a href="https://github.com/frkntony" className="btn red waves-effect waves-black">Source Code</a></li>
+                  <li><a href="https://github.com/frkntony/veil-like-discord" className="btn red waves-effect waves-black">Source Code</a></li>
                   <li><a href="https://twitter.com/frkntony"> <i className="fab fa-twitter red-text"></i> </a></li>
                   <li><a href="https://github.com/frkntony"> <i className="fab fa-github red-text"></i> </a></li>
                 </ul>

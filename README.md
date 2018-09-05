@@ -6,7 +6,7 @@ A simple simple chat app on ReactJS, Pusher ChatkitSDK and Materialize.css
 
 ### Tools used
 * [create-react-app](https://github.com/facebook/create-react-app)
-* [Pusher ChatkitSDK](Pushers ChatkitSDK)
+* [Pusher ChatkitSDK](https://pusher.com/chatkit)
 * [Materialize.css](https://materializecss.com/)
 
 

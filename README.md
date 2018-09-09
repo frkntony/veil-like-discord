@@ -1,7 +1,11 @@
 # Veil Chat App
 
 ### Description
-A simple simple chat app on ReactJS, Pusher ChatkitSDK and Materialize.css
+A web chat app on ReactJS, Pusher ChatkitSDK and Materialize.css
+
+<a href="https://imgflip.com/gif/2hk7n1"><img src="https://i.imgflip.com/2hk7n1.gif" title="made at imgflip.com"/></a>
+
+<a href="https://imgflip.com/gif/2hk83o"><img src="https://i.imgflip.com/2hk83o.gif" title="made at imgflip.com"/></a>
 
 
 ### Tools used
@@ -10,7 +14,7 @@ A simple simple chat app on ReactJS, Pusher ChatkitSDK and Materialize.css
 * [Materialize.css](https://materializecss.com/)
 
 
-### Installation
+### Installation from source code
 **prerequisites**
 * git
 * npm
